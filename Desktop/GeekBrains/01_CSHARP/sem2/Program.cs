@@ -30,17 +30,38 @@
 // 487 => 8^7 = 2 097 152
 // 254 => 5^4 = 625
 // 617 => 1
+// Console.Write("Введите число: ");
+// int number = Convert.ToInt32(Console.ReadLine());
+// if (number >= 100 && number <= 999)
+// {
+//     int secondDigit = number / 10 % 10; // 487 / 10 % 10 = 48 % 10 = 8
+//     int thirdDigit = number % 10; // 487 % 10 = 7
+//     // Math.Pow(5, 2) => 5 в 2 степени => 25
+//     int result = (int)Math.Pow(secondDigit, thirdDigit);
+//     Console.WriteLine($"Число {number}: {secondDigit}^{thirdDigit} = {result}");
+// }
+// else // Число НЕ трехзначное
+// {
+//     Console.WriteLine("Число НЕ трехзначное");
+// }
+
+// Получите 3 цифру введенного числа слева (с начала)
+// 1234567 => 3
+// 7891 => 9
+// 32 => 3 цифры нет
+
 Console.Write("Введите число: ");
 int number = Convert.ToInt32(Console.ReadLine());
-if (number >= 100 && number <= 999)
+int copyNumber = number;
+if (number < 100) // Число не трехзначное
 {
-    int secondDigit = number / 10 % 10; // 487 / 10 % 10 = 48 % 10 = 8
-    int thirdDigit = number % 10; // 487 % 10 = 7
-    // Math.Pow(5, 2) => 5 в 2 степени => 25
-    int result = (int)Math.Pow(secondDigit, thirdDigit);
-    Console.WriteLine($"Число {number}: {secondDigit}^{thirdDigit} = {result}");
+    Console.WriteLine("Третьей цифры нет :)");
 }
-else // Число НЕ трехзначное
+else // Число трехзначное
 {
-    Console.WriteLine("Число НЕ трехзначное");
+    while (number > 999) // Если в числе минимум 4 цифры, я делю :)
+    {
+        number /= 10; 
+    }
+    Console.WriteLine($"Третья цифра от числа  {copyNumber} = {number % 10}");
 }
