@@ -50,6 +50,28 @@
 // 7891 => 9
 // 32 => 3 цифры нет
 
+// Console.Write("Введите число: ");
+// int number = Convert.ToInt32(Console.ReadLine());
+// int copyNumber = number;
+// if (number < 100) // Число не трехзначное
+// {
+//     Console.WriteLine("Третьей цифры нет :)");
+// }
+// else // Число трехзначное
+// {
+//     while (number > 999) // Если в числе минимум 4 цифры, я делю :)
+//     {
+//         number /= 10; 
+//     }
+//     Console.WriteLine($"Третья цифра от числа  {copyNumber} = {number % 10}");
+// }
+
+
+// Получи третью цифру справа:
+// 456 => 4
+// 7812 => 8
+// 91 => Третьей цифры нет
+
 Console.Write("Введите число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 int copyNumber = number;
@@ -57,11 +79,26 @@ if (number < 100) // Число не трехзначное
 {
     Console.WriteLine("Третьей цифры нет :)");
 }
-else // Число трехзначное
+else // Число минимум трехзначное 
 {
-    while (number > 999) // Если в числе минимум 4 цифры, я делю :)
+    int digitCount = 0; // Количество цифр, которое нужно убрать 
+    int digit = 0; // Третья цифра справа
+    while (digitCount < 2) // Отбрасываем 2 последние цифры
     {
-        number /= 10; 
+        number /= 10;
+        digitCount++; // digitCount = digitCount + 1
     }
-    Console.WriteLine($"Третья цифра от числа  {copyNumber} = {number % 10}");
+    Console.WriteLine($"Третья цифра справа от числа {copyNumber} = {number % 10}");
 }
+
+// int number = 123;
+// Console.WriteLine(number / 100 % 10);
+
+// TryParse
+
+// int a = 14;
+
+// if (a % 7 == 0)
+// {
+//     Console.WriteLine($"{a} кратно 7");
+// }
