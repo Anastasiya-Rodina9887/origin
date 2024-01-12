@@ -96,7 +96,7 @@
 int[] array = { 1, -2, 3, 4, 5, -1, -7, -9, 10, -5 };
 int[] result = new int[array.Length / 2];
  // i - индекс 1 элемента, j - индекс послеж=днего элемента
-for (int i = 0; j = array.Length - 1; i < result.Length; i++, j--)
+for (int i = 0, j = array.Length - 1; i < result.Length; i++, j--)
 {
     result[i] = array[i] * array[j];
 }
